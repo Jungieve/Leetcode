@@ -42,5 +42,18 @@ public class Strstr {
         //2.当needle字符串小于haystack情况(显然是-1,如果还要M*N次计算,考虑到一个非常大的haystack或needle,有可能出现time exceed
         for(int i = 0; i< haystack.length();i++)
             for(int j = 0; j<haystack.length();j++)
+            {
+                // 如果能够匹配到最后,意味着找到第一个needle
+                if(j == haystack.length())
+                    //返回当前的index
+                    return i;
+                //  针对情况2的判断
+                if( i + j  == haystack.length()-1)
+                    return -1;
+                if( haystack.charAt(i+j)!=needle.charAt(j))
+                    break;
+            }
+        return -1;
     }
+
 }
