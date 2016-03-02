@@ -12,7 +12,8 @@ public class StringToInt {
             i++;
         } else if (i < n && str.charAt(i) == '-') {
             sign = -1;
-            i++; }
+            i++;
+        }
         int num = 0;
         while (i < n && Character.isDigit(str.charAt(i))) {
             int digit = Character.getNumericValue(str.charAt(i));
@@ -23,4 +24,6 @@ public class StringToInt {
             i++; }
         return sign * num;
     }
+
+
 }
